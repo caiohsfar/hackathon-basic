@@ -1,11 +1,17 @@
-import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import MainTabNavigator from './MainTabNavigator';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
+import DiceScreen from '../screens/DiceScreen';
+
+config = {
+  defaultNavigationOptions: {
+    header: null
+  }
+};
 
 export default createAppContainer(
-  createSwitchNavigator({
-    // You could add another route here for authentication.
-    // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-    Main: MainTabNavigator
-  })
+  createStackNavigator(
+    {
+      Dice: DiceScreen
+    },
+    config
+  )
 );

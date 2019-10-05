@@ -3,7 +3,11 @@ import * as Font from 'expo-font';
 import React from 'react';
 import { Platform, StatusBar, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Provider as PaperProvider, DefaultTheme } from 'react-native-paper';
+import {
+  Provider as PaperProvider,
+  DefaultTheme,
+  Appbar
+} from 'react-native-paper';
 
 import AppNavigator from './src/navigation/AppNavigator';
 
@@ -11,7 +15,7 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: 'purple',
+    primary: 'red',
     accent: '#fff'
   }
 };
@@ -33,7 +37,7 @@ export default class App extends React.Component {
     } else {
       return (
         <PaperProvider theme={theme}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          <Appbar style={{ height: StatusBar.currentHeight }} />
           <AppNavigator />
         </PaperProvider>
       );
