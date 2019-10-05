@@ -14,6 +14,10 @@ import {
 
 import AppNavigator from './src/navigation/AppNavigator';
 
+import Game from './src/services/Game';
+
+const game = new Game('hackercidadao');
+
 const theme = {
   ...DefaultTheme,
   colors: {

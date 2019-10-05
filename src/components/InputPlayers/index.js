@@ -6,9 +6,18 @@ import Layout from '../../constants/Layout';
 const WIDTH = Dimensions.get('window').width;
 
 export default class InputPlayers extends Component {
-  state = {
-    text: ''
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ''
+    };
+  }
+
+  handleOnChange = (text) => {
+    this.setState({ text });
+    this.props.onChange(text);
+  }
 
   render() {
     return (
@@ -28,7 +37,7 @@ export default class InputPlayers extends Component {
             label={`Nome Jogador ${this.props.nrJogador}`}
             value={this.state.text}
             underlineColor={`${this.props.color}`}
-            onChangeText={text => this.setState({ text })}
+            onChangeText={text => this.handleOnChange(text)}
             mode="outlined"
           />
         </View>

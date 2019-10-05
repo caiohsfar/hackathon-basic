@@ -10,6 +10,7 @@ export default StyleSheet.create({
     backgroundColor: '#EFF2F7'
   },
   text: {
-    margin: '5%'
+    margin: '5%',
+    fontSize: 20,
   }
 });
