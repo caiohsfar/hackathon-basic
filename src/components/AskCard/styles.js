@@ -1,16 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Layout from '../../constants/Layout';
 
 export default StyleSheet.create({
   container: {
-    bottom: 0,
-    position: 'absolute',
-    width: Layout.window.width,
-    height: 45,
-    justifyContent: 'center'
+    width: Dimensions.get('window').width * 0.9, 
+    marginLeft: '5%', 
+    marginTop: '2%',
+    justifyContent: 'center', 
+    backgroundColor: '#EFF2F7'
   },
   text: {
-    color: '#fff',
-    backgroundColor: '#fff'
+    margin: '5%'
   }
 });
