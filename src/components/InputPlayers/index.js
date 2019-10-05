@@ -34,7 +34,7 @@ export default class InputPlayers extends Component {
 
         <View style={{ width: 250 }}>
           <TextInput
-            label={`Nome Jogador ${this.props.nrJogador}`}
+            label={`Nome do jogador ${this.props.nrJogador}`}
             value={this.state.text}
             underlineColor={`${this.props.color}`}
             onChangeText={text => this.handleOnChange(text)}

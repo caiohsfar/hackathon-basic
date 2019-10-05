@@ -40,10 +40,10 @@ export default function BoardScreen(props) {
       <AnimatedProgress
         style={{ top: -16 }}
         progress={progress}
-        color={'#094644'}
+        color={'#F5015D'}
       />
       <View style={styles.header}>
-        <Header title="Tabuleiro" subtitle="Olha quem tá ganhando!" />
+        <Header title="Pontuação" subtitle="Vamos ver quem está na frente?" />
       </View>
       <View
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}

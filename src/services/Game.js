@@ -68,6 +68,12 @@ export default class Game {
         return questions[this.currQuestion].alternatives;
     }
 
+    // curiosidades
+    getCuriosities() {
+        const {curiosities} = questions[this.currQuestion]
+        return curiosities[Math.floor(Math.random() * curiosities.length)];
+    }
+
     // verifica se a resposta ta correta
     verifyAnswer(answer) {
         const questionAnsewer = questions[this.currQuestion].answer;

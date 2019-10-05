@@ -51,7 +51,8 @@ export default function DiceScreen(props) {
   }
   return (
     players.length > 0 && (<View style={styles.container}>
-      {currPlayer && (<Header title={currPlayer.name} subtitle="Sua vez de jogar o dado" />)}
+      {currPlayer && isDisable == false ? (<Header title={currPlayer.name} subtitle="Sua vez de jogar o dado" />) : 
+      (<Header title={`Vamos lá!`} subtitle="Pressione em continuar" />) }
       <View
         style={{
           flex: 0.8,
