@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions } from 'react-native';
-import { ProgressBar, Colors } from 'react-native-paper';
 import CustomButton from '../../components/Button';
-import {  View, Text, Dimensions, TouchableOpacity } from 'react-native';
-
+import {  View, Text, Animated, TouchableOpacity } from 'react-native';
 import { ProgressBar, Dialog, Portal, Button, Provider, Paragraph  } from 'react-native-paper';
 import Header from '../../components/Header';
 import AskCard from '../../components/AskCard';
 import styles from './styles';
+import NavService from '../../navigation/service';
+
+
+const AnimatedProgress = Animated.createAnimatedComponent(ProgressBar);
 
 export default class QuizScreen extends Component {
   constructor(props) {
@@ -18,6 +19,19 @@ export default class QuizScreen extends Component {
       msg: 0
     }
   };
+
+  progress = new Animated.Value(1);
+
+  decrementProgress = () => {
+    Animated.timing(this.progress, {
+      toValue: 0,
+      duration: 15000,
+      useNativeDriver: true
+    }).start(() => {
+      // this.props.navigation.navigate('Board');
+      NavService.replace('Board');
+    });
+  }
   
   _showDialog = () => this.setState({ visible: true });
   
@@ -32,10 +46,14 @@ export default class QuizScreen extends Component {
     this.setState({visible2: true, visible: false})
   }
 
+  componentDidMount() {
+    this.decrementProgress();
+  }
+
   render() {
     return (
         <View style={{flex: 1}}>
-            <ProgressBar progress={0.5} color={"#094644"} />
+            <AnimatedProgress style={{ top: -16 }} progress={this.progress} color={"#094644"} />
             <View style={styles.header}>
                 <Header title="Turno de Caio" subtitle="Rodada 1"/>  
             </View>

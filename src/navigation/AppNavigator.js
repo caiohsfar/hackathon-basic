@@ -29,14 +29,14 @@ config = {
 
       return { transform: [{ translateX }] };
     }
-  })
+  }),
+  unmountInactiveRoutes: true,
 };
 
 export default createAppContainer(
   createStackNavigator(
     {
       Home: HomeScreen,
-
       Board: BoardScreen,
       Quiz: QuizScreen,
       Home: HomeScreen,

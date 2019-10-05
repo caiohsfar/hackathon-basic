@@ -3,6 +3,9 @@ import * as Font from 'expo-font';
 import React from 'react';
 import { Platform, StatusBar, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+
+import NavigationService from './src/navigation/service';
+
 import {
   Provider as PaperProvider,
   DefaultTheme,
@@ -38,7 +41,10 @@ export default class App extends React.Component {
       return (
         <PaperProvider theme={theme}>
           <Appbar style={{ height: StatusBar.currentHeight }} />
-          <AppNavigator />
+          <AppNavigator ref={(navigatorRef) => {
+            NavigationService.setTopLevelNavigator(navigatorRef);
+          }
+          } />
         </PaperProvider>
       );
     }

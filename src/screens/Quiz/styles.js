@@ -8,6 +8,6 @@ export default StyleSheet.create({
     justifyContent: 'flex-start', 
     alignItems: 'flex-start', 
     left: '5%', 
-    top: '5%',
+    // top: '5%',
   },
 });

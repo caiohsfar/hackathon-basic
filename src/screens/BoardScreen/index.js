@@ -4,6 +4,7 @@ import { ProgressBar, Colors } from 'react-native-paper';
 import CustomButton from '../../components/Button';
 import Header from '../../components/Header';
 import PlayerScore from '../../components/PlayerScore';
+import NavService from '../../navigation/service';
 
 import styles from './styles';
 
@@ -19,9 +20,12 @@ export default function BoardScreen(props) {
   function decrementProgress() {
     Animated.timing(progress, {
       toValue: 0,
-      duration: 6000,
+      duration: 8000,
       useNativeDriver: true
-    }).start();
+    }).start(() => {
+      // props.navigation.navigate('Quiz');
+      NavService.replace('Quiz');
+    });
   }
 
   useEffect(decrementProgress, [progress]);
@@ -53,7 +57,7 @@ export default function BoardScreen(props) {
         <PlayerScore name={'Eduardo'} color={'#2885B6'} altura={points[3]} />
       </View>
 
-      <CustomButton
+      {/* <CustomButton
         style={{
           backgroundColor: '#41C9C7',
           width: Dimensions.get('window').width,
@@ -62,8 +66,8 @@ export default function BoardScreen(props) {
           alignItems: 'center'
         }}
         title="Começar"
-        onPress={() => props.navigation.navigate('Dice')}
-      />
+        onPress={() => NavService.replace('Quiz')}
+      /> */}
     </View>
   );
 }
