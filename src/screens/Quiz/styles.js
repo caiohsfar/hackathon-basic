@@ -4,6 +4,7 @@ export default StyleSheet.create({
     flex: 1
   },
   header: {
+    flex: 1,
     justifyContent: 'flex-start', 
     alignItems: 'flex-start', 
     left: '5%', 

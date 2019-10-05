@@ -12,7 +12,7 @@ export default class InputPlayers extends Component {
 
   render() {
     return (
-      <View style={{ flexDirection: 'row', margin: 10 }}>
+      <View style={{ flexDirection: 'row', margin: 10, justifyContent: 'space-around' }}>
         <View
           style={{
             width: 70,

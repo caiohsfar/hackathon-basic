@@ -10,7 +10,7 @@ export default StyleSheet.create({
     top: '5%',
   },
   jogadores: {
-    justifyContent: 'center', 
+    justifyContent: 'space-between', 
     alignContent: 'flex-end'
   },
   bottomView:{

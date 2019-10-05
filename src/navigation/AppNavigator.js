@@ -3,6 +3,7 @@ import { Easing, Animated } from 'react-native';
 import DiceScreen from '../screens/DiceScreen';
 import HomeScreen from '../screens/HomeScreen';
 import BoardScreen from '../screens/BoardScreen';
+import QuizScreen from '../screens/Quiz';
 
 config = {
   defaultNavigationOptions: {
@@ -34,9 +35,10 @@ config = {
 export default createAppContainer(
   createStackNavigator(
     {
+      Quiz: QuizScreen,
       Home: HomeScreen,
+      Board: BoardScreen,
       Dice: DiceScreen,
-      Board: BoardScreen
     },
     config
   )

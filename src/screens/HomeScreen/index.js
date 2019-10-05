@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import Header from '../../components/Header';
 import InputPlayers from '../../components/InputPlayers';
-import styles from '../DiceScreen/styles';
+import styles from './styles';
 import CustomButton from '../../components/Button';
 
 export default class HomeScreen extends Component {
