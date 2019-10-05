@@ -4,9 +4,8 @@ export default StyleSheet.create({
     flex: 1
   },
   header: {
-    justifyContent: 'flex-start', 
-    alignItems: 'flex-start', 
-    left: '5%', 
-    top: '5%',
-  },
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    left: '5%'
+  }
 });

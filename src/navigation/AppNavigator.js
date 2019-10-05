@@ -35,10 +35,12 @@ config = {
 export default createAppContainer(
   createStackNavigator(
     {
+      Home: HomeScreen,
+
+      Board: BoardScreen,
       Quiz: QuizScreen,
       Home: HomeScreen,
-      Board: BoardScreen,
-      Dice: DiceScreen,
+      Dice: DiceScreen
     },
     config
   )
